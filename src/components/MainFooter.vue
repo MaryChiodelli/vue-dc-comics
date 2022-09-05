@@ -72,7 +72,21 @@
                 <img src="../assets/dc-logo-bg.png" alt="">
             </div>
         </div>
-        <div class="container"></div>
+        <div class="footer-cta">
+            <div class="container">
+                <a class="button" href="#">Sign-up now!</a>
+                <div class="socials">
+                    <h3>Follow us</h3>
+                    <ul class="social-list">
+                        <li><a href="#"><img src="../assets/footer-facebook.png" alt=""></a></li>
+                        <li><a href="#"><img src="../assets/footer-twitter.png" alt=""></a></li>
+                        <li><a href="#"><img src="../assets/footer-youtube.png" alt=""></a></li>
+                        <li><a href="#"><img src="../assets/footer-pinterest.png" alt=""></a></li>
+                        <li><a href="#"><img src="../assets/footer-periscope.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 </template>
 
@@ -129,6 +143,40 @@ export default {
                 top: 50%;
                 right: 0;
                 transform: translateY(-50%);
+            }
+        }
+    }
+
+    .footer-cta {
+        padding: 1.5rem 0;
+        background-color: #303030;
+        color: #fff;
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .button {
+                display: block;
+                padding: 8px 12px;
+                border: 2px solid #0282f9;
+                margin-right: auto;
+                text-transform: uppercase;
+            }
+            
+            .socials {
+                display: contents;
+
+                h3 {
+                    color: #0282f9;
+                    text-transform: uppercase;
+                }
+
+                .social-list {
+                    display: flex;
+                    gap: 1rem;
+                }
             }
         }
     }
