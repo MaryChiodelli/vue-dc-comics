@@ -1,8 +1,9 @@
 <template>
     <main>
         <div class="hero">
-            <!-- image -->
-            <!-- Heading -->
+            <div class="container">
+                <h2 class="hero-title">Current series</h2>
+            </div>
         </div>
         <div class="series">
             <div class="container serie-list">
@@ -34,9 +35,24 @@
 <style lang="scss" scoped>
     main {
         .hero {
-            height: 400px;
             background: url('../assets/jumbotron.jpg') top/cover no-repeat;
             background-color: #1c1c1c;
+
+            .container {
+                height: 400px;
+                position: relative;
+            }
+
+            .hero-title {
+                padding: 0.5rem 1rem;
+                position: absolute;
+                bottom: 0;
+                left: 1rem;
+                transform: translateY(+50%);
+                background-color: #0282f9;
+                color: #fff;
+                text-transform: uppercase;
+            }
         }
 
         .series {

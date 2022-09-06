@@ -2,25 +2,9 @@
     <footer>
         <div class="features">
             <ul class="container feature-list">
-                <li class="feature-item">
-                    <img src="../assets/buy-comics-digital-comics.png" alt="">
-                    Digital comics
-                </li>
-                <li class="feature-item">
-                    <img src="../assets/buy-comics-merchandise.png" alt="">
-                    DC merchandise
-                </li>
-                <li class="feature-item">
-                    <img src="../assets/buy-comics-subscriptions.png" alt="">
-                    Subscription
-                </li>
-                <li class="feature-item">
-                    <img src="../assets/buy-comics-shop-locator.png" alt="">
-                    Comic shop locator
-                </li>
-                <li class="feature-item">
-                    <img src="../assets/buy-dc-power-visa.svg" alt="">
-                    DC power visa
+                <li v-for="(feature, index) in features" :key="index" class="feature-item">
+                    <img :src="feature.src" :alt="feature.text">
+                    {{ feature.text }}
                 </li>
             </ul>
         </div>
@@ -91,9 +75,36 @@
 </template>
 
 <script>
-export default {
+    const features = [
+        {
+            src: require('../assets/buy-comics-digital-comics.png'),
+            text: 'Digital comics'
+        },
+        {
+            src: require('../assets/buy-comics-merchandise.png'),
+            text: 'DC merchandise'
+        },
+        {
+            src: require('../assets/buy-comics-subscriptions.png'),
+            text: 'Subscription'
+        },
+        {
+            src: require('../assets/buy-comics-shop-locator.png'),
+            text: 'Comic shop locator'
+        },
+        {
+            src: require('../assets/buy-dc-power-visa.svg'),
+            text: 'DC power visa'
+        }
+    ]
 
-}
+    export default {
+        data() {
+            return {
+                features: features
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
