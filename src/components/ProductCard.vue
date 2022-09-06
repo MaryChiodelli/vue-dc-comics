@@ -1,16 +1,29 @@
 <template>
     <div class="card">
-        <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-        <h3>Titolo</h3>
+        <img :src="src" :alt="title">
+        <h3>{{ title }}</h3>
     </div>
 </template>
 
 <script>
 export default {
-
+    props: {
+        src: String,
+        title: String
+    }
 }
 </script>
 
 <style lang="scss" scoped>
+    img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: top;
+    }
 
+    h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
 </style>
