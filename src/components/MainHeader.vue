@@ -6,35 +6,8 @@
             </div>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Characters</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Comics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Movies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tv</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Collectibles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Videos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fans</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
+                    <li v-for="(link, index) in links" :key="index" class="nav-item">
+                        <a class="nav-link" href="link.href">{{ link.text }}</a>
                     </li>
                 </ul>
             </nav>
@@ -43,9 +16,66 @@
 </template>
 
 <script>
-export default {
-    
-}
+    const links = [
+        {
+            href: '#',
+            text: 'characters',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'comics',
+            active: true
+        },
+        {
+            href: '#',
+            text: 'movies',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'tv',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'games',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'collectibles',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'videos',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'fans',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'news',
+            active: false
+        },
+        {
+            href: '#',
+            text: 'shop',
+            active: false
+        }
+    ]
+
+    export default {
+        data() {
+            return {
+                links: links
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -72,20 +102,22 @@ export default {
         }
 
         .nav {
-            &-list {
+            .nav-list {
                 display: flex;
                 align-items: center;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
-            &-item.active {
-                border-bottom: 4px solid #0282f9;
-            }
-            
-            &-link {
-                padding: 0 12px;
-                line-height: 1.5rem;
+            .nav-link {
+                display: block;
+                line-height: 3rem;
+                border-bottom: 4px solid #fff;
                 text-transform: uppercase;
+            }
+
+
+            .nav-link:hover {
+                border-color: #0282f9;
             }
         }
     }
