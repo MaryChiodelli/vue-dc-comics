@@ -11,48 +11,11 @@
         <div class="nav">
             <div class="container">
                 <div>
-                    <h3>DC comics</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                    <h3>Shop</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
+                    <WidgetMenu class="mb" title="DC comics" :links="menu1" />
+                    <WidgetMenu title="Shop" :links="menu2" />
                 </div>
-                <div>
-                    <h3>DC</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Sites</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
+                <WidgetMenu title="DC" :links="menu3" />
+                <WidgetMenu title="Sites" :links="menu4" />
                 <img src="../assets/dc-logo-bg.png" alt="">
             </div>
         </div>
@@ -75,6 +38,8 @@
 </template>
 
 <script>
+    import WidgetMenu from './WidgetMenu.vue';
+
     const features = [
         {
             src: require('../assets/buy-comics-digital-comics.png'),
@@ -97,11 +62,126 @@
             text: 'DC power visa'
         }
     ]
+    const menu1 = [
+        {
+            href: '#',
+            text: 'Characters'
+        },
+        {
+            href: '#',
+            text: 'Comics'
+        },
+                {
+            href: '#',
+            text: 'Movies'
+        },
+                {
+            href: '#',
+            text: 'TV'
+        },
+                {
+            href: '#',
+            text: 'Games'
+        },
+                {
+            href: '#',
+            text: 'Videos'
+        },
+                {
+            href: '#',
+            text: 'News'
+        }
+    ]
+    const menu2 = [
+        {
+            href: '#',
+            text: 'Shop DC'
+        },
+        {
+            href: '#',
+            text: 'Shop DC Collectibles'
+        }
+    ]
+    const menu3 = [
+        {
+            href: '#',
+            text: 'Terms Of Use'
+        },
+        {
+            href: '#',
+            text: 'Privacy policy (New)'
+        },
+                {
+            href: '#',
+            text: 'Add Choices'
+        },
+                {
+            href: '#',
+            text: 'Advertising'
+        },
+                {
+            href: '#',
+            text: 'Jobs'
+        },
+                {
+            href: '#',
+            text: 'Subscriptions'
+        },
+                {
+            href: '#',
+            text: 'Talent Workshops'
+        },
+                {
+            href: '#',
+            text: 'CPSC Certificates'
+        },
+                {
+            href: '#',
+            text: 'Ratings'
+        },
+                {
+            href: '#',
+            text: 'Shop Help'
+        },
+                {
+            href: '#',
+            text: 'Contact Us'
+        }
+    ]
+    const menu4 = [
+        {
+            href: '#',
+            text: 'DC'
+        },
+        {
+            href: '#',
+            text: 'MAD Magazine'
+        },
+        {
+            href: '#',
+            text: 'DC Kids'
+        },
+        {
+            href: '#',
+            text: 'DC Universe'
+        },
+        {
+            href: '#',
+            text: 'DC Power Visa'
+        }
+    ]
 
     export default {
+        components: {
+            WidgetMenu
+        },
         data() {
             return {
-                features: features
+                features: features,
+                menu1: menu1,
+                menu2: menu2,
+                menu3: menu3,
+                menu4: menu4
             }
         }
     }
@@ -146,6 +226,10 @@
             display: flex;
             gap: 1.5em;
             position: relative;
+
+            .mb {
+                margin-bottom: 1.5rem;
+            }
 
             img {
                 width: 560px;
